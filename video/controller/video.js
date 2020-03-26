@@ -17,6 +17,9 @@ async function downloadVideo(req, res) {
         const request = https.get(videoDetails.link, function (response) {
             response.pipe(res);
         });
+        res.status(200).send({
+            success: true
+        });
     }
     else {
         res.status(400).send({

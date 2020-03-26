@@ -41,12 +41,11 @@ async function registerUser(req, res) {
             );
         }
         let { created, user } = await userDao.createUser(body.fullName, body.email, body.password);
-        console.log(user)
-        return {
+        res.status(200).send({
             success: true,
             user,
             token: session.createSession(user)
-        };
+        });
     }
 }
 

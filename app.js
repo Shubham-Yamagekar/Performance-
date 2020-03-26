@@ -22,3 +22,5 @@ const server = app.listen(process.env.PORT || 7979, function () {
     const port = server.address().port;
     console.log("app listening at http://%s:%s", host, port);
 });
+
+module.exports = app;
